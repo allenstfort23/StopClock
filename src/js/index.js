@@ -31,7 +31,7 @@ function SimpleCounter() {
 	let one = Math.floor(counter / 1);
 
 	return (
-		<div>
+		<div className="layout">
 			<div className="bigCounter">
 				<div className="calendar">
 					<i className="fas fa-clock"></i>
@@ -41,19 +41,30 @@ function SimpleCounter() {
 				<div className="two">{two % 10}</div>
 				<div className="one">{one % 10}</div>
 			</div>
+			<div className="buttons">
+				<div>
+					<button
+						className={"btn btn-primary"}
+						onClick={() => setCounter((counter = 0))}>
+						Reset
+					</button>
+				</div>
+				<div>
+					<button
+						className={"btn btn-success"}
+						onClick={() => setPause(false)}>
+						Start
+					</button>
+				</div>
 
-			<button
-				onClick={() => setCounter((counter = 0))}
-				className="mx-auto">
-				Reset
-			</button>
-			<button onClick={() => setPause(false)} className="mx-auto">
-				Start
-			</button>
-
-			<button onClick={() => setPause(true)} className="mx-auto">
-				Stop
-			</button>
+				<div>
+					<button
+						className={"btn btn-danger"}
+						onClick={() => setPause(true)}>
+						Stop
+					</button>
+				</div>
+			</div>
 		</div>
 	);
 }
